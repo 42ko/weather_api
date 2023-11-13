@@ -23,7 +23,7 @@ export class AuthService {
     const { fio } = user;
     return {
       fio,
-      token: this.jwtService.sign({ fio: user.fio }),
+      token: this.jwtService.sign({ fio: user.fio, id: user.id }),
     };
   }
 }

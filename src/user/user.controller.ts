@@ -13,15 +13,11 @@ export class UserController {
     return this.userService.createUser(createUserDto);
   }
 
-  @Get()
+  @Get(':login')
   get(@Param('login') login: string){
     return this.userService.findOne(login)
   }
 
-  @UseGuards(JwtAuthGuard)
-  @Delete()
-  deleteUser(@Param('login') login: string) {
-    return this.userService.deleteUser(login);
-  }
+ 
   
 }

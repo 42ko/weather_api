@@ -6,7 +6,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   
    const config = new DocumentBuilder()
-    .setTitle('Users Crud')
+    .setTitle('Weather Api')
     .setDescription('The description')
     .setVersion('1.0')
     .build();

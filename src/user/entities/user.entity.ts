@@ -1,5 +1,3 @@
-import { ApiProperty } from "@nestjs/swagger";
-import { Weather } from "src/weather/entities/weather.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
@@ -16,11 +14,8 @@ export class User {
   @Column({ nullable: true })
   fio: string;
 
-  @Column()
+  @Column({ nullable: true })
   token: string;
-
-  @OneToMany(() => Weather, weather => weather.user)
-  weather: Weather[];
 
 }
 

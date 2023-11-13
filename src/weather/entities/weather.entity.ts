@@ -1,17 +1,15 @@
-import { User } from 'src/user/entities/user.entity';
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Weather {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => User, user => user.weather)
-  @JoinColumn({ name: 'user_id' })
-  user: User;
+  @Column({ nullable: true })
+  user_id: number;
 
-  @Column()
-  action_time:Date;
+  @Column({ type: 'bigint' }) // используем bigint для хранения миллисекунд
+  action_time: number;
 
   @Column()
   request_result:number

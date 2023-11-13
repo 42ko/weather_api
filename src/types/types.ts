@@ -1,3 +1,4 @@
 export interface IUser {
-    fio:string
+  fio: string;
+  id: number;
 }
